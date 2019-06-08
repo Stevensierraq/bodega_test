@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.order-item {
+    display: flex;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: -2px -2px 2px 0px $yellow-opt;
+	   -moz-box-shadow: -2px -2px 2px 0px $yellow-opt;
+            box-shadow: -2px -2px 2px 0px $yellow-opt;
+            
+    :nth-child(1){
+        width: 220px;
+    }
+    :nth-child(2){
+        width: 120px;
+    }
+    :nth-child(3){
+        width: 210px;
+    }
+    :nth-child(4){
+        width: 140px;
+    }
+    :nth-child(5){
+        display: flex;
+        width: 160px;
+    }
+}
+
+.list-order-container {
+    overflow-y: auto;
+    height: 650px;
+    width: 980px;
+}
+
+
+.list-order-container::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.list-order-container::-webkit-scrollbar-thumb
+{
+	border-radius: 12px;
+	-webkit-box-shadow: inset 0 0 6px $yellow-opt;
+	background-color: $yellow;
+}
