@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/mocha": "^5.2.7",
-    "@types/react": "^16.8.19",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-redux": "^7.0.9",
-    "@types/redux-logger": "^3.0.7",
     "antd": "^3.19.2",
     "faker": "^4.1.0",
     "husky": "^2.4.0",
@@ -15,6 +10,7 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-redux": "^6.0.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.5",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6"
@@ -41,6 +37,11 @@
     }
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.9",
+    "@types/redux-logger": "^3.0.7",
     "awesome-typescript-loader": "^5.2.1",
     "eslint-plugin-react-hooks": "^1.6.0",
     "source-map-loader": "^0.2.4",
