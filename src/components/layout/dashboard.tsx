@@ -1,9 +1,12 @@
 import React from 'react'
 
-import Menu from '../commons/menu'
+import OrderList from '../orders'
 
 export default function Dashboard() {
   return (
-    <Menu />
+    <div>
+      <h1>Dashboard</h1>
+      <OrderList />
+    </div>
   )
 }

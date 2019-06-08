@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 function OrderList(props: any) {
   return (
-    <div className='order-list-container'>
+    <div>
       {
         props.orders.map((order: any) => (
           <div key={order._id}>
