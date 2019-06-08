@@ -1,21 +1,40 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import posed, { PoseGroup } from 'react-pose'
+import { useSelector } from 'react-redux'
 
-function OrderList(props: any) {
+import OrderItem from './ui/order'
+import './ui/style.scss'
+
+function OrderList() {
+  const orders = useSelector((state: any) => state.orders)
+
+  const OrderDiv = posed.div({
+    enter: {
+      y: 15,
+      opacity: 1,
+      delay: 0,
+      transition: {
+        y: { type: 'spring', stiffness: 1000, damping: 15 },
+        default: { duration: 400 },
+      },
+    },
+  })
+
   return (
-    <div>
-      {
-        props.orders.map((order: any) => (
-          <div key={order._id}>
-            {order._id}
-          </div>
-        ))
-      }
+    <div className='list-order-container'>
+      <PoseGroup key='list-items'>
+        {
+          orders.map((order: any) => (
+            <OrderDiv key={order._id}>
+              <OrderItem
+                order={order}
+              />
+            </OrderDiv>
+          ))
+        }
+      </PoseGroup>
     </div>
   )
 }
 
-const mapStateToProps = (state: any) => ({
-  orders: state.orders,
-})
-export default connect(mapStateToProps)(OrderList)
+export default OrderList
