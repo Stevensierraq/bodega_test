@@ -1,7 +1,7 @@
 import React from 'react'
 import posed from 'react-pose'
 
-import Chart from '../charts'
+import TableOrders from '../orders/table'
 
 import '../styles/werehouse.scss'
 
@@ -16,12 +16,11 @@ const Content = posed.div({
 
 export default function Dashboard() {
   return (
-    <Container>
-      <div className='werehouse-container'>
-        <Content>
-          <h1>Bodega</h1>
-        </Content>
-      </div>
+    <Container className='werehouse-container'>
+      <Content>
+        <h1>Bodega</h1>
+        <TableOrders />
+      </Content>
     </Container>
   )
 }
