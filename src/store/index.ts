@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import logger from 'redux-logger'
 
 import { IOrder, IOrders } from '../interfaces/order'
+import { addOrder } from './actions'
 import { IAction } from './interfaces'
 import data from './orders.json'
 
@@ -39,12 +40,7 @@ function startEvent(delay: number) {
     clearTimeout(timerId)
   }
   timerId = setTimeout(() => {
-    store.dispatch({
-      type: '@@ORDERS/ADD_ORDER',
-      payload: {
-        order: data[index],
-      },
-    })
+    store.dispatch(addOrder(data[index]))
     if (index < (data.length - 1)) {
       index += 1
       return startEvent(getRandom())

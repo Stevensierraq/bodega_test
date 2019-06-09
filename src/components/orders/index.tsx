@@ -1,3 +1,4 @@
+import { Skeleton } from 'antd'
 import React from 'react'
 import posed, { PoseGroup } from 'react-pose'
 import { useSelector } from 'react-redux'
@@ -22,6 +23,17 @@ function OrderList() {
 
   return (
     <div className='list-order-container'>
+      <div className='head-title'>
+        <h3>ORDENES REAL TIME</h3>
+        <h3>#{orders.length}</h3>
+      </div>
+      {
+        orders.length < 1 &&
+        <Skeleton
+          active
+          paragraph={{ rows: 1 }}
+        />
+      }
       <PoseGroup key='list-items'>
         {
           orders.map((order: any) => (
