@@ -1,5 +1,11 @@
 .dashboard-container {
     display: grid;
     padding: 2%;
-    grid-template-rows: 250px 1fr;
+    background-color: #ECECEC;
+    grid-template-rows: 1fr;
+    grid-template-columns: 460px 1fr;
+}
+
+.chart-container {
+    display: flex;
 }

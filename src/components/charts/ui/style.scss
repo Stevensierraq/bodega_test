@@ -1,0 +1,35 @@
+.charts-container {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -1.5vh;
+
+    .chart-card {
+        width: 430px;
+        margin: 15px;
+        padding: 10px;
+        height: 26vh;
+        background-color: white;
+        border-radius: 5px;
+
+        h3 {
+            margin: 0;
+        }
+
+        -webkit-box-shadow: 9px 12px 15px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 9px 12px 15px -9px rgba(0,0,0,0.75);
+        box-shadow: 9px 12px 15px -9px rgba(0,0,0,0.75);
+
+        .chart-display {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .chart-loader {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 15%;
+    }  
+}

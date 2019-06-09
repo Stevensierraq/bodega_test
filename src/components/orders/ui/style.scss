@@ -5,6 +5,7 @@
     padding: 6px;
     margin: 5px;
     border-radius: 5px;
+    background-color: white;
 
     -webkit-box-shadow: -2px -2px 2px 0px $yellow-opt;
 	   -moz-box-shadow: -2px -2px 2px 0px $yellow-opt;
@@ -30,8 +31,22 @@
 
 .list-order-container {
     overflow-y: auto;
-    height: 650px;
-    width: 980px;
+    margin-top: 25px;
+    height: 90vh;
+
+    .head-title {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        h3 {
+            color: grey;
+    
+        }
+    }
+
 }
 
 
