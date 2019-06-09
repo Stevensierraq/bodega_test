@@ -17,9 +17,20 @@ function orderReducer(state = [], action: IAction): IOrder[] | {} {
     default: return state
   }
 }
+
+function werehouseReducer(state = data, action: IAction): IOrder[] | {} {
+  switch (action.type) {
+    case '@@WEREHOUSE/GET_ORDERS': {
+      return state
+    }
+    default: return state
+  }
+}
+
 const store = createStore(
   combineReducers<IOrders | any>({
     orders: orderReducer,
+    werehouseOrders: werehouseReducer,
   }),
   applyMiddleware(logger),
 )

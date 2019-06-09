@@ -12,12 +12,12 @@ import 'antd/dist/antd.css'
 import Dashboard from './components/layout/dashboard'
 import Werehouse from './components/layout/werehouse'
 
+import './App.css'
+
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 200, beforeChildren: 300 },
   exit: { opacity: 0 },
 })
-
-import './App.css'
 
 export default function App() {
   return (
@@ -27,7 +27,7 @@ export default function App() {
         <Route
           render={({ location }: any) => (
             <PoseGroup>
-              <RouteContainer key={location.key}>
+              <RouteContainer key={location.pathname}>
                 <Switch>
                   <Route exact path='/'>
                     <Dashboard />

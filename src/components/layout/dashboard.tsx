@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ChartList from '../charts'
-import OrderList from '../orders'
+import OrderList from '../orders/realTime'
 
 import '../styles/dashboard.scss'
 
