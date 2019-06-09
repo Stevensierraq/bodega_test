@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Chart from '../charts'
+import ChartList from '../charts'
 import OrderList from '../orders'
 
 import '../styles/dashboard.scss'
@@ -11,7 +11,7 @@ export default function Dashboard() {
       <div>
         <h1>Dashboard</h1>
         <div className='chart-container'>
-          <Chart />
+          <ChartList />
         </div>
       </div>
       <OrderList />
