@@ -1,4 +1,4 @@
-import { IOrder } from '../interfaces/order'
+import { IOrder, IOrders } from '../interfaces/order'
 
 export interface IAction {
   type: string
@@ -6,5 +6,12 @@ export interface IAction {
     order: {},
     key: string,
     value: string | number,
+    id: string,
   },
+}
+
+export interface IReducer {
+  orders: IOrder[],
+  order: IOrder,
+  werehouseOrders: IOrder[],
 }
