@@ -11,6 +11,7 @@ import 'antd/dist/antd.css'
 
 import Dashboard from './components/layout/dashboard'
 import Werehouse from './components/layout/werehouse'
+import OrderDetail from './components/orders/orderDetail'
 
 import './App.css'
 
@@ -34,6 +35,9 @@ export default function App() {
                   </Route>
                   <Route path='/werehouse'>
                     <Werehouse />
+                  </Route>
+                  <Route path='/detail/:id'>
+                    <OrderDetail />
                   </Route>
                 </Switch>
               </RouteContainer>

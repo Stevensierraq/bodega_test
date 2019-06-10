@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import logger from 'redux-logger'
 
-import { IOrder, IOrders } from '../interfaces/order'
+import { IOrder } from '../interfaces/order'
 import { addOrder } from './actions'
-import { IAction } from './interfaces'
+import { IAction, IReducer } from './interfaces'
 import data from './orders.json'
 
 function orderReducer(state = [], action: IAction): IOrder[] | {} {
@@ -13,6 +13,15 @@ function orderReducer(state = [], action: IAction): IOrder[] | {} {
         ...state,
         action.payload.order,
       ]
+    }
+    default: return state
+  }
+}
+
+function orderDetailReducer(state = {}, action: IAction): IOrder | {} {
+  switch (action.type) {
+    case '@@ORDER/SET_ORDER': {
+      return data.filter((order: IOrder) => order._id === action.payload.id)[0]
     }
     default: return state
   }
@@ -28,8 +37,9 @@ function werehouseReducer(state = data, action: IAction): IOrder[] | {} {
 }
 
 const store = createStore(
-  combineReducers<IOrders | any>({
+  combineReducers<IReducer | any>({
     orders: orderReducer,
+    order: orderDetailReducer,
     werehouseOrders: werehouseReducer,
   }),
   applyMiddleware(logger),
