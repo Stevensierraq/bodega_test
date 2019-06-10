@@ -1,7 +1,7 @@
 import { Icon } from 'antd'
 import React from 'react'
 
-export const columns: any = [
+export const Columns: any = (handleDetail: any) => [
   {
     title: 'Usuario',
     dataIndex: 'user.name',
@@ -25,6 +25,13 @@ export const columns: any = [
   },
   {
     title: 'Ver',
-    render: () => <Icon type='eye' style={{ cursor: 'pointer' }} />,
+    dataIndex: '_id',
+    render: (id: string) => (
+      <Icon
+        type='eye'
+        style={{ cursor: 'pointer' }}
+        onClick={() => handleDetail(id)}
+      />
+    ),
   },
 ]

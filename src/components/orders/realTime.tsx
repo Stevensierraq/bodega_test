@@ -3,11 +3,12 @@ import React from 'react'
 import posed, { PoseGroup } from 'react-pose'
 import { useSelector } from 'react-redux'
 
+import {IOrder, IOrders} from '../../interfaces/order'
 import OrderItem from './ui/order'
 import './ui/style.scss'
 
 function OrderList() {
-  const orders = useSelector((state: any) => state.orders)
+  const orders = useSelector((state: IOrders) => state.orders)
 
   const OrderDiv = posed.div({
     enter: {
@@ -36,7 +37,7 @@ function OrderList() {
       }
       <PoseGroup key='list-items'>
         {
-          orders.map((order: any) => (
+          orders.map((order: IOrder) => (
             <OrderDiv key={order._id}>
               <OrderItem
                 order={order}
